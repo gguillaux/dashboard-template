@@ -1,0 +1,82 @@
+body {
+    background-color: #000033;
+    font-family: 'Lucida Grande', 'Segoe UI', Ubuntu, Cantarell, Verdana, sans-serif;
+}
+
+.row {
+    color: #ffff;
+}
+
+#nav {
+    background-color: #003d7a;
+    font-size: 23px;
+}
+
+.navbar-brand {
+    font-size: 25px;
+}
+
+#nav a{
+    color: #ffff;
+}
+
+#nav #dropDown {
+    color: #ffff;
+    font-size: 23px;
+    background-color: #003d7a;
+}
+
+#nav #dropDown :hover {
+    color: #003d7a;
+}
+
+.row {
+    width: 100%;
+    height: 500px;
+    background: no-repeat center center;
+    background-size: cover;
+    margin-top: 30px;
+}
+
+.dash {
+    font-size: 25px;
+}
+
+.x_axis {
+    font-size: 13px;
+}
+
+.button {
+    float: right;
+    font-size: 15px;
+    background-color: transparent;
+    color: #38b39a;
+    border: 1px solid #38b39a; 
+    text-decoration: none;
+    transition-duration: 0.3s;
+}
+
+.button:hover {
+    color: #ffff;
+    background-color: #38b39a;
+}
+.button:active{
+    background-color: #ffff;
+    color: #38b39a;
+}
+
+
+
+/*
+colors = [
+'#e8ce86',
+'#007cce',
+'#95da9d',
+'#c7e32f',
+'#931ee2',
+'#7f5240',
+'#38b39a',
+'#75dc31',
+'#9b283e'
+]
+*/
