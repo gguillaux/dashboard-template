@@ -1,3 +1,5 @@
+// =============================================================
+// =============================================================
 // SUPPORT FUNCTIONS
 
 function getWidth( id ) { 
@@ -20,6 +22,14 @@ function invertHex(hex) {
     return '#' + (Number(`0x1${hex.replace('#', '')}`) ^ 0xFFFFFF).toString(16)
                                                  .substr(1)
                                                  .toUpperCase()
+}
+
+function updateTagText( id ) {
+    let old = document.getElementById( id ).firstChild.nodeValue.trim();
+    let base = old.slice(0 , old.length - 4);
+    let year = Number(old.slice(old.length - 4,old.length));
+    year += 1;
+    document.getElementById( id ).firstChild.nodeValue =  base + year.toString();
 }
 
 function generateRandomData(factor, bar_number) {
@@ -135,7 +145,7 @@ let charts = [ 'chart_1' , 'chart_2', 'chart_3', 'chart_4', 'chart_5' ];
 let months = [ 'Jan',  'Feb',  'Mar',  'Apr',
                'May',  'Jun',  'Jul',  'Aug',
                'Sep',  'Oct',  'Nov',  'Dec' ]
-let mult_factor = 150;                    // factor to multiply random data
+let mult_factor = 250;                    // factor to multiply random data
 let bar_padding = 0.05;                  // space between bars
 let area_usage = 0.9;
 let svg_height = getHeight('chart_1') * area_usage;
@@ -191,7 +201,11 @@ window.addEventListener("resize", resizeGraphs);
 d3.selectAll('.button')
     .on('click', function() {
         console.log('You clicked on button for chart ' + this.parentNode.id);
+        
         let chart = this.parentNode.id;
+        // change tag text
+        updateTagText( chart );
+
         let new_data = generateRandomData(mult_factor, bar_number);    // generate new data
         let y_scale = d3.scaleLinear()
                         .domain( [ 0, d3.max( new_data )  ] ) 
@@ -230,9 +244,6 @@ d3.selectAll('.button')
             .text( function( d ){ return d } )
             .attr('y', function ( d ) {return svg_height - y_scale( d ) - 5})
     });
-
-
-
 /*
 colors = [
 '#e8ce86',
