@@ -137,6 +137,13 @@ function resizeGraphs(){
     }
 }
 
+function plotPieChart() {
+    let width = getWidth( 'pie_chart_5' ) * (area_usage);
+    let height = 450 * area_usage; 
+    let margin = 30;
+    let radius = Math.min(width, height) / 2 - margin
+}
+
 // ========================================================================================
 // ========================================================================================
 // ************** MAIN  **************
