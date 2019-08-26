@@ -38,7 +38,7 @@ body {
 }
 
 .dash {
-    font-size: 25px;
+    font-size: 22px;
     height: 450px;
     margin-top: 40px;
 }
@@ -71,6 +71,19 @@ body {
 #mapas {
     height: auto;
     width: auto;
+}
+
+div.tooltip { 
+    position: absolute;     
+    text-align: center;     
+    width: 100px;          
+    height: 35px;         
+    padding: 2px;       
+    font: 12px sans-serif;    
+    background: #00003f; 
+    border: 0px;        
+    pointer-events: none;     
+    color: #ffff;
 }
 
 
