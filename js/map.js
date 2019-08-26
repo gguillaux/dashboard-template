@@ -20,6 +20,7 @@ function resizeMap() {
   path.projection( projection );
   svg.selectAll('path')
      .transition()
+     .duration(150)
      .attr('d', path);
 }
 
@@ -41,8 +42,8 @@ let color       =   d3.scaleQuantize().range([
                       // '#3690c0', '#0570b0', '#045a8d', '#023858'
                       
                       // shades for red
-                      '#fee0d2', '#fcbba1', '#fc9272', '#fb6a4a',
-                      '#ef3b2c', '#cb181d', '#a50f15', '#67000d'
+                      '#ffffcc', '#ffeda0', '#fed976', '#feb24c', '#fd8d3c',
+                      '#fc4e2a', '#e31a1c', '#bd0026', '#800026'
                       ]);                          
 
 let path        =   d3.geoPath()
@@ -89,14 +90,15 @@ d3.json( json_file_path ).then( function ( data ) {
             d3.select(this)
               // light blue
               // .attr('fill', '#f7fbff' );
-              .attr('fill', '#fff5f0' );
+              .attr('fill', '#f6fbfc' );
             
             // show tooltipz
             let x = d3.event.x;
             let y = d3.event.y;
             let c = d.properties.name + '<br> Sales : ' + countries[d.properties.name] * 1000 + 'M';
             tooltip.transition()
-                   .style( 'opacity', .97 );
+                   .duration(150)
+                   .style( 'opacity', .82 );
             tooltip.html( c )
                    .style( 'left', x + 'px')
                    .style( 'top', y + 'px')
@@ -116,3 +118,4 @@ d3.json( json_file_path ).then( function ( data ) {
 // =============================================
 // events
 window.addEventListener("resize", resizeMap);
+
